@@ -52,3 +52,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
+          # ensure the action can create a fresh orphan history if needed
+          force_orphan: true
+          # set a consistent committer identity
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          # force push to overwrite mismatched histories
+          force: true
